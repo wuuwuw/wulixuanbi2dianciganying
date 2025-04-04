@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>电磁感应综合测试题</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #2c3e50; }
+        .question {
+            margin: 2rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .answer {
+            color: #c0392b;
+            margin: 1rem 0;
+            display: none;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #2980b9; }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>电磁感应综合测试题</h1>
+
+    <!-- 选择题 -->
+    <div class="question">
+        <p><strong>1. 电磁感应现象中，产生感应电流的必要条件是（　　）</strong></p>
+        <input type="radio" name="q1" value="A"> A. 导体做切割磁感线运动<br>
+        <input type="radio" name="q1" value="B"> B. 闭合电路的磁通量发生变化<br>
+        <input type="radio" name="q1" value="C"> C. 磁场强度足够大<br>
+        <input type="radio" name="q1" value="D"> D. 导体长度足够长<br>
+        <button onclick="toggleAnswer('a1')">显示答案</button>
+        <div class="answer" id="a1">答案：B（磁通量变化是根本条件）[[5]][[7]]</div>
+    </div>
+
+    <div class="question">
+        <p><strong>2. 法拉第电磁感应定律的数学表达式为（　　）</strong></p>
+        <input type="radio" name="q2" value="A"> A. \( \mathcal{E} = B \cdot l \cdot v \)<br>
+        <input type="radio" name="q2" value="B"> B. \( \mathcal{E} = -\frac{\Delta \Phi}{\Delta t} \)<br>
+        <input type="radio" name="q2" value="C"> C. \( \mathcal{E} = I \cdot R \)<br>
+        <input type="radio" name="q2" value="D"> D. \( \mathcal{E} = \frac{Q}{C} \)<br>
+        <button onclick="toggleAnswer('a2')">显示答案</button>
+        <div class="answer" id="a2">答案：B（法拉第定律核心公式）[[5]][[8]]</div>
+    </div>
+
+    <!-- 填空题 -->
+    <div class="question">
+        <p><strong>3. 磁通量的单位是________，其定义式为________。</strong></p>
+        <input type="text" placeholder="第一空"><br>
+        <input type="text" placeholder="第二空"><br>
+        <button onclick="toggleAnswer('a3')">显示答案</button>
+        <div class="answer" id="a3">答案：韦伯（Wb）；\( \Phi = B \cdot S \cdot \cos\theta \) [[5]][[7]]</div>
+    </div>
+
+    <!-- 简答题 -->
+    <div class="question">
+        <p><strong>4. 简述楞次定律的内容，并说明其与能量守恒的关系。</strong></p>
+        <textarea rows="3" placeholder="输入答案..."></textarea><br>
+        <button onclick="toggleAnswer('a4')">显示答案</button>
+        <div class="answer" id="a4">
+            答案：感应电流的方向总是阻碍引起它的磁通量变化（如"增反减同"）。该规律本质是能量守恒的体现，阻碍过程需外力做功，将其他形式能转化为电能[[3]][[5]]。
+        </div>
+    </div>
+
+    <!-- 计算题 -->
+    <div class="question">
+        <p><strong>5. 导体棒质量\( m=0.1\,kg \)，长\( l=0.5\,m \)，在磁场\( B=0.4\,T \)中从静止下落5m时，求：</strong></p>
+        <p>(1) 此时速度\( v \)；<br>(2) 动生电动势\( \mathcal{E} \)。</p>
+        <textarea rows="4" placeholder="写出计算过程..."></textarea><br>
+        <button onclick="toggleAnswer('a5')">显示答案</button>
+        <div class="answer" id="a5">
+            答案：<br>
+            (1) \( v = \sqrt{2gh} = \sqrt{2 \times 9.8 \times 5} \approx 9.9\,m/s \)<br>
+            (2) \( \mathcal{E} = B \cdot l \cdot v = 0.4 \times 0.5 \times 9.9 \approx 1.98\,V \) [[2]][[3]]
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
